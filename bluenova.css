@@ -1,0 +1,108 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+/**
+* Hide scrollbar in sidebar navigation
+*/
+.fi-siderbar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.fi-siderbar-nav{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/** Body */
+body.fi-body {
+    @apply bg-slate-50;
+}
+
+/** Main content */
+main.fi-main {
+    @apply px-10 md:px-16 lg:px-16 max-w-full mx-auto w-full;
+}
+
+/** Sidebar */
+aside.fi-sidebar{
+    @apply bg-gradient-to-b from-slate-700 to-slate-800 
+    dark:bg-gradient-to-b dark:from-gray-800 dark:from-gray-900;
+    
+    & .fi-sidebar-nav-groups{
+        @apply gap-y-3;
+    } 
+
+    & .fi-sidebar-nav{
+        @apply px-4 pt-4;
+
+        & li.fi-sidebar-item{
+            & .fi-sidebar-item-label, .fi-sidebar-item-icon{
+                @apply text-gray-100;
+            }
+        }
+
+        & li.fi-sidebar-item-active, li.fi-sidebar-item:hover{
+            & .fi-sidebar-item-label, .fi-sidebar-item-icon{
+                @apply text-blue-900 dark:text-blue-500;
+            }
+        }
+        
+        & .fi-sidebar-group-button span, button{
+            @apply text-blue-300;
+        }
+    }
+    
+    /** Header */
+    header.fi-sidebar-header{
+        @apply h-12 bg-blue-800 dark:bg-gray-900;
+        
+        & .fi-logo{
+            @apply text-white;
+        }
+    }
+}
+
+/** Topbar */
+div.fi-topbar nav{
+    @apply bg-blue-800 h-12 dark:bg-gray-900;
+}
+
+/** Table */
+table.fi-ta-table{
+    /* Table Header */
+    & thead tr{
+        @apply bg-gradient-to-br from-slate-700 to-slate-800 dark:bg-none;
+        @apply dark:bg-gray-800;
+        
+        & th span{
+            @apply text-white;
+        }
+
+        & th.fi-ta-cell div.px-3.py-4{
+            @apply py-3;
+        }
+
+        & th.fi-ta-header-cell{
+            @apply py-3;
+        }
+        
+        & tbody tr{
+            & td.fi-ta-cell{
+                & div.px-3.py-4{
+                    @apply py-[0.3rem];
+                }
+
+                & button{
+                    @apply py-[0.3rem];
+                }
+            }
+        }
+    }
+
+
+    /* Table Body */
+
+
+
+}
